@@ -11,6 +11,8 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
  # Create node user
  && groupadd --gid 1000 node \
  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node \
+ && echo node ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/node \
+ && chmod 0440 /etc/sudoers.d/node \
  #
  # Clean up
  && apt-get autoremove -y \
