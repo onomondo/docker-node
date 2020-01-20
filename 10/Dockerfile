@@ -7,6 +7,7 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
  && apt-get update \
  && apt-get install --assume-yes build-essential openssh-client nodejs yarn git \
+ && sed -i 's/#   StrictHostKeyChecking ask/    StrictHostKeyChecking no/g' /etc/ssh/ssh_config \
  #
  # Create node user
  && groupadd --gid 1000 node \
