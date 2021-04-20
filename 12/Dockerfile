@@ -1,4 +1,4 @@
-FROM onomondo/debian:10.2
+FROM onomondo/debian:10.9
 
 COPY --chown=root:root 12/etc/apt/sources.list.d/nodesource.list /etc/apt/sources.list.d/nodesource.list
 COPY --chown=root:root etc/apt/sources.list.d/yarn.list /etc/apt/sources.list.d/yarn.list
